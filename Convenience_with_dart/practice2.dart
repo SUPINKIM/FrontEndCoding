@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
           // Add your onPressed code here!
           Navigator.push(
             context,
-            MaterialPageRoute(builder:(context)=>TabbarRote()),
+            MaterialPageRoute(builder:(context)=>TabbarRote()),  //화면 이동
           );
         },
         child: Icon(Icons.add),
