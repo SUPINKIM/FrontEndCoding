@@ -20,7 +20,7 @@ driver = webdriver.Chrome(ChromeDriverManager().install())
 
 #driver = webdriver.Chrome('C:/Users/paprikastory/Downloads/chromedriver_win32/chromedriver')
 driver.implicitly_wait(3)
-driver.get('https://www.instagram.com/gs25_official/')
+driver.get('http://gs25.gsretail.com/gscvs/ko/main')
 
 req = driver.page_source
 soup=BeautifulSoup(req, 'html.parser')
@@ -28,28 +28,44 @@ soup=BeautifulSoup(req, 'html.parser')
 
 #---------------webdriver 연결
 
-#first = soup.select('#contents > div:nth-child(3) > div > div > div.snack_sect2.mt50 > div > div.snack_list > ul > li:nth-child(1) > div > a:nth-child(1) > span.tit.lh22 > span')
-#print(first)
-first=driver.find_element_by_xpath('//*[@id="react-root"]/section/main/div/div[3]/article[2]/div[1]/div/div[1]/div[1]/a/div[2]')
-print(first)
-#first.click()
-
-'''element = driver.find_element_by_xpath('//*[@id="contents"]/div[2]/div/div/div[6]/div/div[1]')
-driver.execute_script("arguments[0].click();", element)'''
-
-'''for i in first:
-    i.click()
-    driver.implicitly_wait(2)'''
+driver.find_element_by_xpath('//*[@id="contents"]/div[2]/div/div[3]/div[1]/div/div[3]/a/div').click() #소셜gs25(인스타그램)
 
 driver.implicitly_wait(2)
 
-'''iframes = driver.find_elements_by_css_selector('iframe')
-for iframe in iframes:
-    print(iframe.get_attribute('name'))'''
-    
-driver.switch_to_frame('fb_xdm_frame_https')
-html = driver.page_source
-src=driver.__getattribute__['src']
-print(src)
+driver.switch_to_window(driver.window_handles[1]) 
+driver.get_window_position(driver.window_handles[1])  #페이지 포커스 새 창으로 이동
 
+driver.implicitly_wait(3)
+
+body = driver.find_element_by_tag_name('body')
+body.send_keys(Keys.PAGE_DOWN)
+
+links = soup.find_all("a")
+ 
+for a in links:
+    href = a.attrs['href']
+    text = a.string
+    print(text,">",href)
+
+
+insta_pages=driver.find_elements_by_xpath('//*[@id="react-root"]/section/main/div/div[3]/article[1]/div/div/div')
+print (insta_pages)
+count=0
+for i in insta_pages:
+    count=count+1
+
+print(count)
+
+'''for i in range(1,count+1):
+    img = driver.find_element_by_xpath('//*[@id="react-root"]/section/main/div/div[3]/article[1]/div/div/div[1]/div["+str(i)+"]')
+    img = img.text
+    print(img)
+'''
+
+
+driver.close()
+
+
+driver.switch_to_window(driver.window_handles[0]) 
+driver.get_window_position(driver.window_handles[0])  #페이지 다운 
 driver.close()
