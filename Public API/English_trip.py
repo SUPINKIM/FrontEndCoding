@@ -9,7 +9,7 @@ from json import JSONDecodeError
 ServiceKey = "개인 API 인증키" 
 
 url = "http://api.visitkorea.or.kr/openapi/service/rest/EngService/detailIntro?ServiceKey="+ServiceKey+"&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=TestApp&&contentId=621155&contentTypeId=78&introYN=Y"
-#요청 파라미터 넣어서 호출
+#요청 파라미터 넣어서 호출(api 가이드 문서의 예제와 동일한 파라미터 사용)
 
 request = urllib.request.Request(url)
 response = urllib.request.urlopen(request)
