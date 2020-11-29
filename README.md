@@ -6,6 +6,6 @@
 
 요즘에는 javascript, html, css 를 열심히 공부중입니다.
 
-[Supinkim의 github](https://supinkim.github.io/)
+[Supinkim의 github 바로 ](https://supinkim.github.io/)
 
 더 자세한 공부 기록이 궁금하다면 저의 깃허브 블로그를 참조해주세요. 감사합니다!
