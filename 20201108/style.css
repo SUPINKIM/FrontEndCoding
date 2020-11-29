@@ -1,0 +1,22 @@
+body {
+  background-color: #ffe1e6;
+}
+
+.head_nav {
+  /*background: #ffbcb9;*/
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  padding: 8px 12px;
+  margin: 0;
+}
+
+.title:hover {
+  background-color: #f088b1;
+  border-radius: 4px;
+}
