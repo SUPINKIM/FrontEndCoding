@@ -1,0 +1,79 @@
+.headline {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 8px 12px;
+}
+
+.agroup {
+  list-style: none; /*앞에 표시 제거*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 8px 12px;
+}
+
+li {
+  padding: 8px 12px;
+  margin: 0.5em;
+}
+
+a {
+  text-decoration: none; /*underline 제거*/
+  color: teal;
+}
+
+.agroup li:hover {
+  background: #ffe641;
+  border-radius: 6px;
+}
+
+.bigbox {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.youtubevedio {
+  padding-right: 0.5rem;
+}
+
+.forecast {
+  margin: 0;
+  padding: 0.5rem;
+  width: fit-content;
+  background-color: #eee;
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+.forecast > h1,
+.day-forecast {
+  margin: 0.5rem;
+  padding: 0.3rem;
+  font-size: 1.2rem;
+}
+
+.day-forecast {
+  background: right/contain content-box border-box no-repeat #87cefa;
+  width: 10em;
+}
+
+.day-forecast > h2,
+.day-forecast > p {
+  margin: 0.2rem;
+  font-size: 1rem;
+  color: #eee;
+}
+
+.lastone {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: #be2457;
+  display: flex;
+  justify-content: center;
+  color: #eee;
+}
