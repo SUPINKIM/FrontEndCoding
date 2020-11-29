@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #46beff;
+  padding: 8px 12px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  padding: left;
+  padding-left: 0;
+}
+
+.logotitle {
+  font-size: 24px;
+}
+
+.menu li {
+  padding: 8px 12px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 0;
+}
+.icons li {
+  list-style: none;
+}
+
+.icons li img {
+  width: 20px;
+  height: 20px;
+  padding: 8px 12px;
+}
+
+.menu li:hover {
+  background-color: #cd426b;
+  border-radius: 4px;
+}
+
+.toggleBtn img {
+  width: 35px;
+  height: 35px;
+  filter: brightness(50%);
+}
+
+.toggleBtn {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .icons {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .toggleBtn {
+    display: block;
+  }
+  .menu.active,
+  .icons.active {
+    display: flex;
+  }
+}
